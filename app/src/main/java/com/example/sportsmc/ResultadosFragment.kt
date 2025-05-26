@@ -25,10 +25,17 @@ class ResultadosFragment : Fragment() {
         val apiKey = "ca9bd78222a44a44bffca0ebbbdf2d00"
 
         api.listarPartidas("BSA", apiKey).enqueue(object : Callback<MatchResponse> {
+
             override fun onResponse(call: Call<MatchResponse>, response: Response<MatchResponse>) {
                 if (response.isSuccessful) {
                     val partidas = response.body()?.matches ?: emptyList()
-                    recycler.adapter = PartidasAdapter(partidas)
+                    val partidasOrdenadas = partidas
+                        .filter { it.score.fullTime.home != null && it.score.fullTime.away != null }
+                        .sortedByDescending { it.matchday ?: 0 } +
+                            partidas.filter { it.score.fullTime.home == null || it.score.fullTime.away == null }
+                                .sortedBy { it.matchday ?: 0 }
+
+                    recycler.adapter = PartidasAdapter(partidasOrdenadas)
                 } else {
                     Toast.makeText(context, "Erro ao carregar resultados", Toast.LENGTH_SHORT).show()
                 }

@@ -1,4 +1,3 @@
-// Models.kt
 package com.example.sportsmc
 
 // Para resultados de partidas
@@ -7,11 +6,12 @@ data class Match(
     val homeTeam: Team,
     val awayTeam: Team,
     val score: Score,
-    val utcDate: String
+    val utcDate: String,
+    val matchday: Int? // <-- Novo campo para a rodada
 )
 data class Team(val name: String)
 data class Score(val fullTime: FullTime)
-data class FullTime(val homeTeam: Int?, val awayTeam: Int?)
+data class FullTime(val home: Int?, val away: Int?)
 
 // Para artilheiros
 data class ScorersResponse(val scorers: List<Scorer>)
