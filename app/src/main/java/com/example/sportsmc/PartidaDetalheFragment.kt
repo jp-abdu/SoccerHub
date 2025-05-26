@@ -36,6 +36,14 @@ class PartidaDetalheFragment : Fragment() {
         return view
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // Garante que as abas e o viewPager voltem a aparecer ao sair do detalhe
+        requireActivity().findViewById<View>(R.id.viewPager).visibility = View.VISIBLE
+        requireActivity().findViewById<View>(R.id.tabLayout).visibility = View.VISIBLE
+        requireActivity().findViewById<View>(R.id.fragmentContainer).visibility = View.GONE
+    }
+
     companion object {
         fun novaInstancia(match: Match): PartidaDetalheFragment {
             val fragment = PartidaDetalheFragment()

@@ -37,6 +37,7 @@ class ResultadosFragment : Fragment() {
 
                     recycler.adapter = PartidasAdapter(partidasOrdenadas) { partida ->
                         requireActivity().findViewById<View>(R.id.viewPager).visibility = View.GONE
+                        requireActivity().findViewById<View>(R.id.tabLayout).visibility = View.GONE
                         requireActivity().findViewById<View>(R.id.fragmentContainer).visibility = View.VISIBLE
 
                         val fragment = PartidaDetalheFragment.novaInstancia(partida)

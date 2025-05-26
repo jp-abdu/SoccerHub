@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- res/values/colors.xml -->
+    <color name="tabela_verde_escuro">#2E7D32</color>
+    <color name="tabela_verde_claro">#81C784</color>
+    <color name="tabela_azul">#64B5F6</color>
+    <color name="tabela_vermelho">#E57373</color>
+    <color name="tabela_transparente">#00000000</color>
 </resources>
