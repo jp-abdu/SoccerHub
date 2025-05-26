@@ -7,11 +7,22 @@ data class Match(
     val awayTeam: Team,
     val score: Score,
     val utcDate: String,
-    val matchday: Int? // <-- Novo campo para a rodada
+    val matchday: Int?,
+    val venue: String?, // Estádio
+    val lineups: List<Lineup>?, // Escalações
+    val goals: List<Goal>?, // Gols
+    val bookings: List<Card>? // Cartões
 )
 data class Team(val name: String)
 data class Score(val fullTime: FullTime)
 data class FullTime(val home: Int?, val away: Int?)
+
+// Escalações
+data class Lineup(val team: Team, val formation: String?, val players: List<Player>)
+// Gols
+data class Goal(val minute: Int, val scorer: Player, val team: Team)
+// Cartões
+data class Card(val minute: Int, val player: Player, val team: Team, val card: String) // "Yellow" ou "Red"
 
 // Para artilheiros
 data class ScorersResponse(val scorers: List<Scorer>)

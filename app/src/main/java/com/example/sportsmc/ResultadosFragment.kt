@@ -35,7 +35,16 @@ class ResultadosFragment : Fragment() {
                             partidas.filter { it.score.fullTime.home == null || it.score.fullTime.away == null }
                                 .sortedBy { it.matchday ?: 0 }
 
-                    recycler.adapter = PartidasAdapter(partidasOrdenadas)
+                    recycler.adapter = PartidasAdapter(partidasOrdenadas) { partida ->
+                        requireActivity().findViewById<View>(R.id.viewPager).visibility = View.GONE
+                        requireActivity().findViewById<View>(R.id.fragmentContainer).visibility = View.VISIBLE
+
+                        val fragment = PartidaDetalheFragment.novaInstancia(partida)
+                        requireActivity().supportFragmentManager.beginTransaction()
+                            .replace(R.id.fragmentContainer, fragment)
+                            .addToBackStack(null)
+                            .commit()
+                    }
                 } else {
                     Toast.makeText(context, "Erro ao carregar resultados", Toast.LENGTH_SHORT).show()
                 }

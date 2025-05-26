@@ -51,49 +51,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp"/>
 
-        <TextView
-            android:id="@+id/txtEsporteFavorito"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Esporte favorito:"
-            app:layout_constraintTop_toBottomOf="@id/edtIdade"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp"/>
-
-        <RadioGroup
-            android:id="@+id/rgEsporte"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/txtEsporteFavorito"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <RadioButton
-                android:layout_height="wrap_content"
-                android:text="Futebol"/>
-            <RadioButton
-                android:id="@+id/rbVolei"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vôlei"/>
-            <RadioButton
-                android:id="@+id/rbBasquete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Basquete"/>
-        </RadioGroup>
-
         <EditText
             android:id="@+id/edtTime"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Time do coração"
-            app:layout_constraintTop_toBottomOf="@id/rgEsporte"
+            app:layout_constraintTop_toBottomOf="@id/edtIdade"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="16dp"/>
 
         <CheckBox
             android:id="@+id/cbNotificacoes"

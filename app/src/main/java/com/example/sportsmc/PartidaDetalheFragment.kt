@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
@@ -26,6 +27,12 @@ class PartidaDetalheFragment : Fragment() {
         view.findViewById<TextView>(R.id.txtDetalhePlacar).text = placar
         view.findViewById<TextView>(R.id.txtDetalheRodada).text = "Rodada: $rodada"
 
+        view.findViewById<Button>(R.id.btnVoltar)?.setOnClickListener {
+            requireActivity().findViewById<View>(R.id.fragmentContainer).visibility = View.GONE
+            requireActivity().findViewById<View>(R.id.viewPager).visibility = View.VISIBLE
+            parentFragmentManager.popBackStack()
+        }
+
         return view
     }
 
@@ -45,6 +52,7 @@ class PartidaDetalheFragment : Fragment() {
                     "A definir"
             )
             args.putString("rodada", match.matchday?.toString() ?: "N/A")
+
             fragment.arguments = args
             return fragment
         }

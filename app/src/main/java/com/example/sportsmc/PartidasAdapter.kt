@@ -6,7 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PartidasAdapter(private val partidas: List<Match>) : RecyclerView.Adapter<PartidasAdapter.ViewHolder>() {
+class PartidasAdapter(
+    private val partidas: List<Match>,
+    private val onClick: (Match) -> Unit
+) : RecyclerView.Adapter<PartidasAdapter.ViewHolder>() {
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtJogo: TextView = view.findViewById(android.R.id.text1)
     }
@@ -27,6 +31,8 @@ class PartidasAdapter(private val partidas: List<Match>) : RecyclerView.Adapter<
         } else {
             "Rodada $rodada: ${partida.homeTeam.name} x ${partida.awayTeam.name} (A definir)"
         }
+
+        holder.itemView.setOnClickListener { onClick(partida) }
     }
 
     override fun getItemCount() = partidas.size
