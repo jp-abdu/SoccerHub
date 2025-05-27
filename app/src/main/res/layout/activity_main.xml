@@ -4,19 +4,19 @@
     android:id="@+id/rootLinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F2F8"
+    android:background="#7882B8"
     android:orientation="vertical">
 
     <Button
         android:id="@+id/btnSair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sair"
-        android:background="@android:color/transparent"
-        android:textColor="@color/cor_primaria"
-        android:textSize="16sp"
         android:layout_gravity="start"
-        android:padding="8dp"/>
+        android:background="@android:color/transparent"
+        android:padding="8dp"
+        android:text="sair"
+        android:textColor="@color/cor_primaria"
+        android:textSize="16sp" />
 
     <!-- Título do campeonato centralizado -->
     <TextView
@@ -27,6 +27,7 @@
         android:paddingTop="24dp"
         android:paddingBottom="8dp"
         android:text="Brasileirão Série A"
+        android:textColor="@color/cor_branca"
         android:textSize="24sp"
         android:textStyle="bold" />
 
