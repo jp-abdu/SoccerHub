@@ -1,40 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#003078"
+    android:backgroundTint="#002F77">
+
+    <TextView
+        android:id="@+id/txtBemVindo3"
+        android:layout_width="284dp"
+        android:layout_height="49dp"
+        android:text="Seu app para ficar por dentro de tudo no mundo da bola!"
+        android:textAlignment="center"
+        android:textColor="#F6EAEA"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.479" />
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/txtBemVindo"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="299dp"
+        android:layout_height="211dp"
+        android:src="@drawable/chatgpt_image_26_de_mai__de_2025__23_03_13_removebg_preview"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="80dp"/>
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" />
 
     <TextView
         android:id="@+id/txtBemVindo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bem-vindo ao SportsMC!"
-        android:textSize="22sp"
-        app:layout_constraintTop_toBottomOf="@id/imgLogo"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Bem-vindo ao SoccerHub!"
+        android:textColor="#F6EAEA"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.417" />
 
     <Button
         android:id="@+id/btnIniciarCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/cor_branca"
         android:text="Iniciar Cadastro"
-        android:textColor="@color/white"
-        android:background="@drawable/bg_btn_azul"
-        app:layout_constraintTop_toBottomOf="@id/txtBemVindo"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/cor_primaria"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.603" />
 </androidx.constraintlayout.widget.ConstraintLayout>
