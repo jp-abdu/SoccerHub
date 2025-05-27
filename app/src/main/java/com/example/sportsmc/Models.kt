@@ -8,21 +8,14 @@ data class Match(
     val score: Score,
     val utcDate: String,
     val matchday: Int?,
-    val venue: String?, // Estádio
-    val lineups: List<Lineup>?, // Escalações
-    val goals: List<Goal>?, // Gols
-    val bookings: List<Card>? // Cartões
 )
-data class Team(val name: String)
+data class Team(
+    val id: Int,
+    val name: String,
+    val crest: String? // Adicionado para suportar o escudo do time
+)
 data class Score(val fullTime: FullTime)
 data class FullTime(val home: Int?, val away: Int?)
-
-// Escalações
-data class Lineup(val team: Team, val formation: String?, val players: List<Player>)
-// Gols
-data class Goal(val minute: Int, val scorer: Player, val team: Team)
-// Cartões
-data class Card(val minute: Int, val player: Player, val team: Team, val card: String) // "Yellow" ou "Red"
 
 // Para artilheiros
 data class ScorersResponse(val scorers: List<Scorer>)
@@ -43,4 +36,19 @@ data class TableItem(
     val goalsFor: Int,
     val goalsAgainst: Int,
     val goalDifference: Int
+)
+
+data class TeamDetailResponse(
+    val id: Int,
+    val name: String,
+    val crest: String?,
+    val founded: Int?,
+    val venue: String?,
+    val address: String?,
+    val website: String?,
+    val squad: List<PlayerDetail>?
+)
+data class PlayerDetail(
+    val name: String,
+    val position: String?
 )

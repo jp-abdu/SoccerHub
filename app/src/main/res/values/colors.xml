@@ -2,7 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <!-- res/values/colors.xml -->
+    <color name="cor_primaria">#0B3D91</color>
+    <color name="cor_secundaria">#0B3D91</color>
+    <color name="cor_destaque">#FFC107</color>
+    <color name="cor_branca">#FFFFFF</color>
+    <!-- Outras cores da tabela podem permanecer -->
     <color name="tabela_verde_escuro">#2E7D32</color>
     <color name="tabela_verde_claro">#81C784</color>
     <color name="tabela_azul">#64B5F6</color>

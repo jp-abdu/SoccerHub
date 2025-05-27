@@ -3,12 +3,15 @@ package com.example.sportsmc
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class TabelaAdapter(private val tabela: List<TableItem>) : RecyclerView.Adapter<TabelaAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtPosicao: TextView = view.findViewById(R.id.txtPosicao)
+        val imgEscudo: ImageView = view.findViewById(R.id.imgEscudo)
         val txtTime: TextView = view.findViewById(R.id.txtTime)
         val txtPontos: TextView = view.findViewById(R.id.txtPontos)
         val txtVitorias: TextView = view.findViewById(R.id.txtVitorias)
@@ -30,7 +33,11 @@ class TabelaAdapter(private val tabela: List<TableItem>) : RecyclerView.Adapter<
         holder.txtEmpates.text = item.draw.toString()
         holder.txtDerrotas.text = item.lost.toString()
 
-        // Definir cor de fundo apenas na posição
+        Glide.with(holder.itemView)
+            .load(item.team.crest)
+            .placeholder(R.drawable.ic_launcher_background)
+            .into(holder.imgEscudo)
+
         val context = holder.itemView.context
         val total = tabela.size
         val bgColor = when (item.position) {

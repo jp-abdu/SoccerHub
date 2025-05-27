@@ -3,27 +3,98 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="12dp"
+    android:background="@drawable/bg_resultado_item">
 
-    <TextView
-        android:id="@+id/txtTimes"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Time A x Time B"
-        android:textStyle="bold"
-        android:textSize="16sp" />
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imgEscudoCasa"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/txtTimeCasa"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Time A"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:paddingEnd="12dp"
+            android:textColor="@color/cor_primaria"/>
+
+        <TextView
+            android:id="@+id/txtGolsCasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x"
+            android:textSize="16sp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textColor="@color/cor_primaria"/>
+
+        <TextView
+            android:id="@+id/txtGolsFora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingStart="8dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtTimeFora"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Time B"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:textColor="@color/cor_primaria"/>
+
+        <ImageView
+            android:id="@+id/imgEscudoFora"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/txtData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2024-05-01"
-        android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/txtPlacar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0 - 0"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/cor_primaria"
+        android:textStyle="bold"/>
 </LinearLayout>

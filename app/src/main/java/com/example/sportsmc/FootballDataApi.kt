@@ -23,4 +23,9 @@ interface FootballDataApi {
         @Path("competition") competition: String,
         @Header("X-Auth-Token") apiKey: String
     ): Call<StandingsResponse>
+    @GET("v4/teams/{id}")
+    fun getTeam(
+        @Path("id") teamId: Int,
+        @Header("X-Auth-Token") apiKey: String
+    ): Call<TeamDetailResponse>
 }
