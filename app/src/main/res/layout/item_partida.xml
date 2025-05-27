@@ -97,4 +97,16 @@
         android:textColor="@color/tabela_azul"
         android:textSize="14sp"
         android:textStyle="bold" />
+
+    <!-- NOVO: Exibe o número da rodada -->
+    <TextView
+        android:id="@+id/txtRodada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:text="Rodada: 1"
+        android:textColor="@color/tabela_azul"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 </LinearLayout>

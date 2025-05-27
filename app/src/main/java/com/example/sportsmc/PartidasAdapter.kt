@@ -21,6 +21,7 @@ class PartidasAdapter(
         val txtGolsCasa: TextView = view.findViewById(R.id.txtGolsCasa)
         val txtGolsFora: TextView = view.findViewById(R.id.txtGolsFora)
         val txtData: TextView = view.findViewById(R.id.txtData)
+        val txtRodada: TextView = view.findViewById(R.id.txtRodada) // NOVO
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,6 +34,7 @@ class PartidasAdapter(
         holder.txtTimeCasa.text = partida.homeTeam.name
         holder.txtTimeFora.text = partida.awayTeam.name
         holder.txtData.text = partida.utcDate.substring(0, 10)
+        holder.txtRodada.text = "Rodada: ${partida.matchday ?: "-"}" // NOVO
 
         val golsCasa = partida.score.fullTime.home?.toString() ?: "-"
         val golsFora = partida.score.fullTime.away?.toString() ?: "-"
