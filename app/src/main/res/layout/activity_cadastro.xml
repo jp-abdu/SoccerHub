@@ -1,99 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#003077">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#003077"
         android:padding="24dp">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="380dp"
+            android:layout_height="571dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+        </FrameLayout>
 
         <TextView
             android:id="@+id/txtTituloCadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="545dp"
             android:text="Cadastro de Perfil"
             android:textSize="22sp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edtNome"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="338dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="481dp"
             android:hint="Nome"
-            app:layout_constraintTop_toBottomOf="@id/txtTituloCadastro"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTituloCadastro" />
 
         <EditText
             android:id="@+id/edtEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="338dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="427dp"
             android:hint="E-mail"
             android:inputType="textEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/edtNome"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtNome" />
 
         <EditText
             android:id="@+id/edtIdade"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="338dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="372dp"
             android:hint="Idade"
             android:inputType="number"
-            app:layout_constraintTop_toBottomOf="@id/edtEmail"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtEmail" />
 
         <EditText
             android:id="@+id/edtTime"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="338dp"
+            android:layout_height="47dp"
+            android:layout_marginBottom="300dp"
             android:hint="Time do coração"
-            app:layout_constraintTop_toBottomOf="@id/edtIdade"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtIdade" />
 
         <CheckBox
             android:id="@+id/cbNotificacoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="214dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="105dp"
             android:text="Quero receber notificações"
-            app:layout_constraintTop_toBottomOf="@id/edtTime"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+            app:layout_constraintStart_toEndOf="@+id/frameLayout"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toBottomOf="@id/edtTime" />
 
         <Button
             android:id="@+id/btnEnviarCadastro"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="329dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#003077"
             android:text="Enviar"
             android:textColor="@color/white"
-            android:background="@drawable/bg_btn_azul"
-            app:layout_constraintTop_toBottomOf="@id/cbNotificacoes"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cbNotificacoes" />
 
         <Button
             android:id="@+id/btnFaleConosco"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="329dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#003078"
             android:text="Fale conosco"
             android:textColor="@color/white"
-            android:background="@drawable/bg_btn_azul"
-            app:layout_constraintTop_toBottomOf="@id/btnEnviarCadastro"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnEnviarCadastro" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
