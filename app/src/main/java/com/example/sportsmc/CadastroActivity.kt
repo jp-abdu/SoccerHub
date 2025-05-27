@@ -23,12 +23,16 @@ class CadastroActivity : AppCompatActivity() {
             }
             buscarIdTimePorNome(nomeTime) { idTime ->
                 if (idTime != null) {
+
                     getSharedPreferences("prefs", MODE_PRIVATE)
                         .edit()
                         .putInt("ID_TIME_CORACAO", idTime)
                         .putString("NOME_TIME_CORACAO", nomeTime)
                         .apply()
-                    startActivity(Intent(this, ConfirmacaoActivity::class.java))
+
+                    val intent = Intent(this, ConfirmacaoActivity::class.java)
+                    intent.putExtra("NOME_USUARIO", findViewById<EditText>(R.id.edtNome).text.toString())
+                    startActivity(intent)
                     finish()
                 } else {
                     Toast.makeText(this, "Time não encontrado. Verifique o nome.", Toast.LENGTH_SHORT).show()
