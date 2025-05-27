@@ -26,8 +26,8 @@
 
     <Button
         android:id="@+id/btnSeguirParaApp"
-        android:layout_width="263dp"
-        android:layout_height="63dp"
+        android:layout_width="261dp"
+        android:layout_height="65dp"
         android:layout_marginTop="112dp"
         android:backgroundTint="@color/cor_primaria"
         android:text="Seguir para o app"
