@@ -28,11 +28,11 @@ class CadastroActivity : AppCompatActivity() {
                         .putInt("ID_TIME_CORACAO", idTime)
                         .putString("NOME_TIME_CORACAO", nomeTime)
                         .apply()
+                    startActivity(Intent(this, ConfirmacaoActivity::class.java))
+                    finish()
                 } else {
                     Toast.makeText(this, "Time não encontrado. Verifique o nome.", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(Intent(this, ConfirmacaoActivity::class.java))
-                finish()
             }
         }
 

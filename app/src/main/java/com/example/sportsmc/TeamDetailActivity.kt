@@ -46,16 +46,20 @@ class TeamDetailActivity : AppCompatActivity() {
                     }
                     txtDetails.text = detalhes
 
-                    // Mapeamento das posições para português
+                    // Mapeamento das posições para português (apenas 4 grupos)
                     val posicoesPt = mapOf(
                         "Goalkeeper" to "Goleiros",
                         "Defence" to "Defensores",
+                        "Defender" to "Defensores",
                         "Centre-Back" to "Defensores",
-                        "Midfield" to "Meio-campistas",
-                        "Offence" to "Atacantes"
+                        "Full-Back" to "Defensores",
+                        "Midfield" to "Meias",
+                        "Midfielder" to "Meias",
+                        "Offence" to "Atacantes",
+                        "Attacker" to "Atacantes"
                     )
                     // Ordem de exibição
-                    val positionsOrder = listOf("Goalkeeper", "Defender", "Midfielder", "Atacantes")
+                    val positionsOrder = listOf("Goalkeeper", "Defender", "Midfielder", "Attacker")
 
                     layoutSquad.removeAllViews()
                     val elenco = team?.squad ?: emptyList()
@@ -64,12 +68,14 @@ class TeamDetailActivity : AppCompatActivity() {
                     // Exibe as posições principais na ordem desejada
                     positionsOrder.forEach { pos ->
                         val jogadores = when (pos) {
-                            "Defender" -> elenco.filter { it.position == "Defender" || it.position == "Center-Back" }
+                            "Defender" -> elenco.filter { it.position == "Defender" || it.position == "Centre-Back" || it.position == "Full-Back" || it.position == "Defence" }
+                            "Midfielder" -> elenco.filter { it.position == "Midfielder" || it.position == "Midfield" }
+                            "Attacker" -> elenco.filter { it.position == "Attacker" || it.position == "Offence" }
                             else -> elenco.filter { it.position == pos }
                         }
                         if (jogadores.isNotEmpty()) {
                             val titulo = TextView(this@TeamDetailActivity)
-                            titulo.text = posicoesPt[pos]
+                            titulo.text = posicoesPt[pos] ?: pos
                             titulo.textSize = 18f
                             titulo.setTextColor(getColor(R.color.cor_primaria))
                             titulo.setPadding(0, 12, 0, 4)
@@ -82,33 +88,6 @@ class TeamDetailActivity : AppCompatActivity() {
                                 tv.setPadding(16, 2, 0, 2)
                                 layoutSquad.addView(tv)
                             }
-                            posicoesUsadas.add(pos)
-                            if (pos == "Defender") posicoesUsadas.add("Center-Back")
-                        }
-                    }
-
-                    // Outras posições não previstas
-                    val outrasPosicoes = elenco.mapNotNull { it.position }
-                        .filter { it !in posicoesUsadas }
-                        .distinct()
-                    outrasPosicoes.forEach { pos ->
-                        val jogadores = elenco.filter { it.position == pos }
-                        if (jogadores.isNotEmpty()) {
-                            val titulo = TextView(this@TeamDetailActivity)
-                            titulo.text = pos
-                            titulo.textSize = 18f
-                            titulo.setTextColor(getColor(R.color.cor_primaria))
-                            titulo.setPadding(0, 12, 0, 4)
-                            layoutSquad.addView(titulo)
-                            jogadores.forEach { player ->
-                                val tv = TextView(this@TeamDetailActivity)
-                                tv.text = player.name
-                                tv.textSize = 16f
-                                tv.setTextColor(getColor(R.color.black))
-                                tv.setPadding(16, 2, 0, 2)
-                                layoutSquad.addView(tv)
-                            }
-                            posicoesUsadas.add(pos)
                         }
                     }
 
@@ -140,3 +119,4 @@ class TeamDetailActivity : AppCompatActivity() {
         })
     }
 }
+
