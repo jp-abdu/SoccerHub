@@ -1,82 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/tabela_verde_claro">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:background="@color/tabela_verde_claro"
+        android:padding="24dp">
 
-        <!-- Botão de voltar no topo -->
-        <Button
-            android:id="@+id/btnVoltar"
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:id="@+id/frameTeamDetail"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Voltar"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_btn_azul"
-            android:layout_gravity="start"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="0dp"/>
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/bg_frame_cadastro"
+            android:elevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Escudo e nome do time -->
-        <ImageView
-            android:id="@+id/imgTeamCrest"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_background"
-            android:layout_marginBottom="12dp"/>
-
-        <TextView
-            android:id="@+id/txtTeamName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nome do Time"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:textColor="@color/cor_primaria"
-            android:gravity="center"
-            android:layout_marginBottom="16dp"/>
-
-        <!-- CardView/Box de informações do clube -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#F5F5F5"
-            android:padding="14dp"
-            android:layout_marginBottom="18dp"
-            android:elevation="2dp"
-            android:layout_gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/txtTeamDetails"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fundação: -\nEstádio: -\nCidade: -\nSite: -"
-                android:textSize="16sp"
-                android:textColor="@color/black"/>
-        </LinearLayout>
+                android:orientation="vertical"
+                android:padding="24dp">
 
-        <!-- Título do elenco -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Elenco"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/cor_primaria"
-            android:layout_marginBottom="8dp"/>
+                <!-- Botão de voltar -->
+                <Button
+                    android:id="@+id/btnVoltar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/cor_primaria"
+                    android:text="Voltar"
+                    android:textColor="@color/white" />
 
-        <!-- Lista do elenco agrupado por posição -->
-        <LinearLayout
-            android:id="@+id/layoutSquad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-    </LinearLayout>
+                <!-- Escudo e nome do time -->
+                <ImageView
+                    android:id="@+id/imgTeamCrest"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/ic_launcher_background" />
+
+                <TextView
+                    android:id="@+id/txtTeamName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="Nome do Time"
+                    android:textColor="@color/black"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <!-- Card de informações do clube -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="18dp"
+                    android:background="#F5F5F5"
+                    android:backgroundTint="#FFF"
+                    android:clipToOutline="true"
+                    android:elevation="2dp"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/txtTeamDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fundação: -\nEstádio: -\nCidade: -\nSite: -"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Título do elenco -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Elenco"
+                    android:textColor="@color/cor_primaria"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Lista do elenco agrupado por posição -->
+                <LinearLayout
+                    android:id="@+id/layoutSquad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-
