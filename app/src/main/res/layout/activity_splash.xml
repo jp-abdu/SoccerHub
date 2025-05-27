@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#003078"
-    android:backgroundTint="#002F77">
+    android:background="@drawable/uefa">
 
     <TextView
         android:id="@+id/txtBemVindo3"
@@ -14,7 +13,7 @@
         android:text="Seu app para ficar por dentro de tudo no mundo da bola!"
         android:textAlignment="center"
         android:textColor="#F6EAEA"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -40,7 +39,7 @@
         android:layout_height="wrap_content"
         android:text="Bem-vindo ao SoccerHub!"
         android:textColor="#F6EAEA"
-        android:textSize="28sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,11 +50,12 @@
 
     <Button
         android:id="@+id/btnIniciarCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="210dp"
+        android:layout_height="56dp"
         android:backgroundTint="@color/cor_branca"
         android:text="Iniciar Cadastro"
         android:textColor="@color/cor_primaria"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
