@@ -9,6 +9,18 @@
         android:orientation="vertical"
         android:padding="20dp">
 
+        <!-- Botão de voltar no topo -->
+        <Button
+            android:id="@+id/btnVoltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voltar"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_btn_azul"
+            android:layout_gravity="start"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="0dp"/>
+
         <!-- Escudo e nome do time -->
         <ImageView
             android:id="@+id/imgTeamCrest"
@@ -65,15 +77,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"/>
-
-        <Button
-            android:id="@+id/btnVoltar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Voltar"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_btn_azul"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"/>
     </LinearLayout>
 </ScrollView>
+
