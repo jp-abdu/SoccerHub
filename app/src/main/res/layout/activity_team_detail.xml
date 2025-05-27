@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tabela_verde_claro">
+    android:background="@color/cor_primaria">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/tabela_verde_claro"
+        android:background="@color/cor_primaria"
         android:padding="24dp">
 
         <FrameLayout
@@ -38,7 +38,7 @@
                     android:layout_gravity="start"
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="16dp"
-                    android:backgroundTint="@color/cor_primaria"
+                    android:backgroundTint="@color/tabela_azul"
                     android:text="Voltar"
                     android:textColor="@color/white" />
 

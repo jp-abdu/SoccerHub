@@ -4,32 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/campo"
+    android:background="@drawable/soccer_ball_pictures_zm6sf805ui0s7b3s"
     android:padding="24dp">
 
     <!-- activity_confirmacao.xml -->
 
     <TextView
         android:id="@+id/txtMensagemSucesso"
-        android:layout_width="315dp"
-        android:layout_height="81dp"
+        android:layout_width="366dp"
+        android:layout_height="153dp"
         android:text="Cadastro realizado com sucesso!"
         android:textAlignment="center"
         android:textColor="@color/cor_branca"
-        android:textSize="30sp"
+        android:textSize="42sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.052" />
 
     <Button
         android:id="@+id/btnSeguirParaApp"
         android:layout_width="261dp"
         android:layout_height="65dp"
         android:layout_marginTop="112dp"
-        android:backgroundTint="@color/cor_primaria"
+        android:backgroundTint="@color/tabela_azul"
         android:text="Seguir para o app"
         android:textColor="@color/cor_branca"
         android:textSize="24sp"
@@ -37,21 +38,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtMensagemSucesso"
-        app:layout_constraintVertical_bias="0.052" />
-
-    <TextView
-        android:id="@+id/txtSaudacao"
-        android:layout_width="342dp"
-        android:layout_height="53dp"
-        android:text="Saudações, Usuário, aproveite o app ao maximo!"
-        android:textAlignment="center"
-        android:textColor="@color/cor_branca"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSeguirParaApp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869" />
+        app:layout_constraintVertical_bias="0.888" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

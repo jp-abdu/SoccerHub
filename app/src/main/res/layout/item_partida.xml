@@ -2,99 +2,99 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/material_dynamic_primary20"
     android:orientation="vertical"
-    android:padding="12dp"
-    android:background="@drawable/bg_resultado_item">
+    android:padding="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imgEscudoCasa"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_launcher_background"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:id="@+id/txtTimeCasa"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Time A"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:maxLines="2"
             android:ellipsize="end"
-            android:textAlignment="center"
             android:gravity="center"
+            android:maxLines="2"
             android:paddingEnd="12dp"
-            android:textColor="@color/cor_primaria"/>
+            android:text="Time A"
+            android:textAlignment="center"
+            android:textColor="@color/cor_branca"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtGolsCasa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textStyle="bold"
-            android:textSize="16sp"
             android:paddingStart="12dp"
             android:paddingEnd="8dp"
-            android:textColor="@color/black"/>
+            android:text="0"
+            android:textColor="@color/cor_branca"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="x"
-            android:textSize="16sp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:textColor="@color/cor_primaria"/>
+            android:text="x"
+            android:textColor="@color/tabela_azul"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/txtGolsFora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textStyle="bold"
-            android:textSize="16sp"
             android:paddingStart="8dp"
             android:paddingEnd="12dp"
-            android:textColor="@color/black"/>
+            android:text="0"
+            android:textColor="@color/cor_branca"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtTimeFora"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Time B"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:maxLines="2"
             android:ellipsize="end"
-            android:textAlignment="center"
             android:gravity="center"
+            android:maxLines="2"
             android:paddingStart="12dp"
-            android:textColor="@color/cor_primaria"/>
+            android:text="Time B"
+            android:textAlignment="center"
+            android:textColor="@color/cor_branca"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imgEscudoFora"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_launcher_background"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_launcher_background" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/txtData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2024-05-01"
-        android:textSize="14sp"
-        android:gravity="center"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/cor_primaria"
-        android:textStyle="bold"/>
+        android:gravity="center"
+        android:text="2024-05-01"
+        android:textColor="@color/tabela_azul"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 </LinearLayout>

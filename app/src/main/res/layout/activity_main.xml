@@ -4,7 +4,7 @@
     android:id="@+id/rootLinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tabela_verde_claro"
+    android:background="@color/cor_primaria"
     android:orientation="vertical">
 
     <Button
@@ -15,7 +15,7 @@
         android:background="@android:color/transparent"
         android:padding="8dp"
         android:text="sair"
-        android:textColor="@color/cor_primaria"
+        android:textColor="@color/cor_branca"
         android:textSize="16sp" />
 
     <!-- Título do campeonato centralizado -->
@@ -39,11 +39,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/cor_primaria"
+        android:backgroundTint="@color/tabela_azul"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
         android:text="Meu Time do Coração"
-        android:textColor="@color/white"
+        android:textColor="@color/cor_branca"
         android:textSize="16sp" />
 
     <!-- Conteúdo principal -->
