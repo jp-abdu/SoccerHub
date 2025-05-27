@@ -4,6 +4,7 @@
     android:id="@+id/rootLinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F2F2F8"
     android:orientation="vertical">
 
     <!-- Título do campeonato centralizado -->
@@ -11,48 +12,51 @@
         android:id="@+id/txtTituloCampeonato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Brasileirão Série A"
-        android:textSize="24sp"
-        android:textStyle="bold"
         android:gravity="center"
         android:paddingTop="24dp"
-        android:paddingBottom="8dp"/>
+        android:paddingBottom="8dp"
+        android:text="Brasileirão Série A"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <!-- Botão do time do coração -->
     <Button
         android:id="@+id/btnMeuTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Meu Time do Coração"
-        android:textColor="@color/white"
-        android:background="@drawable/bg_btn_azul"
-        android:textSize="16sp"
         android:layout_gravity="center"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/cor_primaria"
         android:paddingLeft="12dp"
-        android:paddingRight="12dp"/>
+        android:paddingRight="12dp"
+        android:text="Meu Time do Coração"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
     <!-- Conteúdo principal -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="40dp"
+        android:layout_weight="1" />
 
     <!-- Tabs na parte inferior, mas com margem para cima da barra do sistema -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="?android:attr/windowBackground"
+        android:backgroundTint="@color/cor_primaria"
         android:elevation="6dp"
-        android:layout_marginBottom="1dp"/>
+        app:tabIndicatorColor="@color/tabela_verde_claro"
+        app:tabSelectedTextColor="@color/cor_branca"
+        app:tabTextColor="@color/tabela_azul" />
 
     <!-- Novo container para detalhes -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 </LinearLayout>
