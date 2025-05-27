@@ -12,7 +12,6 @@ class ArtilheirosAdapter(private val artilheiros: List<Scorer>) : RecyclerView.A
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgEscudoTime: ImageView = view.findViewById(R.id.imgEscudoTime)
         val txtNomeJogador: TextView = view.findViewById(R.id.txtNomeJogador)
-        val txtTimeJogador: TextView = view.findViewById(R.id.txtTime)
         val txtGols: TextView = view.findViewById(R.id.txtGols)
     }
 
@@ -24,7 +23,6 @@ class ArtilheirosAdapter(private val artilheiros: List<Scorer>) : RecyclerView.A
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val artilheiro = artilheiros[position]
         holder.txtNomeJogador.text = artilheiro.player.name
-        holder.txtTimeJogador.text = artilheiro.team.name
         holder.txtGols.text = artilheiro.goals.toString()
 
         Glide.with(holder.itemView)
