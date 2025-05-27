@@ -54,6 +54,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        findViewById<Button>(R.id.btnSair).setOnClickListener {
+            // Limpa os dados do usuário
+            getSharedPreferences("prefs", MODE_PRIVATE).edit().clear().apply()
+            // Volta para a tela de cadastro/login
+            val intent = Intent(this, SplashActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun buscarIdTimePorNome(nome: String, callback: (Int?) -> Unit) {

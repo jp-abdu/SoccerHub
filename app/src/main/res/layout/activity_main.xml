@@ -7,6 +7,17 @@
     android:background="#F2F2F8"
     android:orientation="vertical">
 
+    <Button
+        android:id="@+id/btnSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sair"
+        android:background="@android:color/transparent"
+        android:textColor="@color/cor_primaria"
+        android:textSize="16sp"
+        android:layout_gravity="start"
+        android:padding="8dp"/>
+
     <!-- Título do campeonato centralizado -->
     <TextView
         android:id="@+id/txtTituloCampeonato"
