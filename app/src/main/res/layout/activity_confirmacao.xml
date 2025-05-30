@@ -11,12 +11,12 @@
 
     <TextView
         android:id="@+id/txtMensagemSucesso"
-        android:layout_width="366dp"
-        android:layout_height="153dp"
+        android:layout_width="385dp"
+        android:layout_height="126dp"
         android:text="Cadastro realizado com sucesso!"
         android:textAlignment="center"
         android:textColor="@color/cor_branca"
-        android:textSize="42sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
