@@ -30,13 +30,13 @@
         android:id="@+id/txtSaudacao"
         android:layout_width="410dp"
         android:layout_height="60dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="200dp"
         android:text="Saudações usuário, Aproveite!"
         android:textAlignment="center"
         android:textColor="@color/cor_branca"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
