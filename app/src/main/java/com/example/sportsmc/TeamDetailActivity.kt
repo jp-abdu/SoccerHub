@@ -7,20 +7,23 @@ import com.bumptech.glide.Glide
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
+// Activity responsável por exibir detalhes de um time e seu elenco
 class TeamDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_team_detail)
+        setContentView(R.layout.activity_team_detail) // Define o layout da tela
 
+        // Recupera o ID do time passado pela intent
         val teamId = intent.getIntExtra("TEAM_ID", -1)
-        val imgCrest = findViewById<ImageView>(R.id.imgTeamCrest)
-        val txtName = findViewById<TextView>(R.id.txtTeamName)
-        val txtDetails = findViewById<TextView>(R.id.txtTeamDetails)
-        val layoutSquad = findViewById<LinearLayout>(R.id.layoutSquad)
-        val btnVoltar = findViewById<Button>(R.id.btnVoltar)
+        val imgCrest = findViewById<ImageView>(R.id.imgTeamCrest)      // Imagem do escudo
+        val txtName = findViewById<TextView>(R.id.txtTeamName)         // Nome do time
+        val txtDetails = findViewById<TextView>(R.id.txtTeamDetails)   // Detalhes do time
+        val layoutSquad = findViewById<LinearLayout>(R.id.layoutSquad) // Layout para o elenco
+        val btnVoltar = findViewById<Button>(R.id.btnVoltar)           // Botão de voltar
 
-        btnVoltar.setOnClickListener { finish() }
+        btnVoltar.setOnClickListener { finish() } // Fecha a activity ao clicar
 
+        // Inicializa Retrofit para consumir a API
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.football-data.org/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -28,6 +31,7 @@ class TeamDetailActivity : AppCompatActivity() {
         val api = retrofit.create(FootballDataApi::class.java)
         val apiKey = "ca9bd78222a44a44bffca0ebbbdf2d00"
 
+        // Faz a requisição para obter detalhes do time
         api.getTeam(teamId, apiKey).enqueue(object : Callback<TeamDetailResponse> {
             override fun onResponse(call: Call<TeamDetailResponse>, response: Response<TeamDetailResponse>) {
                 if (response.isSuccessful) {
@@ -38,6 +42,7 @@ class TeamDetailActivity : AppCompatActivity() {
                         .placeholder(R.drawable.ic_launcher_background)
                         .into(imgCrest)
 
+                    // Monta string com detalhes do time
                     val detalhes = buildString {
                         append("Fundação: ${team?.founded ?: "-"}\n")
                         append("Estádio: ${team?.venue ?: "-"}\n")
@@ -46,7 +51,7 @@ class TeamDetailActivity : AppCompatActivity() {
                     }
                     txtDetails.text = detalhes
 
-                    // Mapeamento das posições para português (apenas 4 grupos)
+                    // Mapeamento das posições para português
                     val posicoesPt = mapOf(
                         "Goalkeeper" to "Goleiros",
                         "Defence" to "Defensores",
@@ -58,14 +63,13 @@ class TeamDetailActivity : AppCompatActivity() {
                         "Offence" to "Atacantes",
                         "Attacker" to "Atacantes"
                     )
-                    // Ordem de exibição
+                    // Ordem de exibição das posições
                     val positionsOrder = listOf("Goalkeeper", "Defender", "Midfielder", "Attacker")
 
                     layoutSquad.removeAllViews()
                     val elenco = team?.squad ?: emptyList()
-                    val posicoesUsadas = mutableSetOf<String>()
 
-                    // Exibe as posições principais na ordem desejada
+                    // Exibe os jogadores agrupados por posição
                     positionsOrder.forEach { pos ->
                         val jogadores = when (pos) {
                             "Defender" -> elenco.filter { it.position == "Defender" || it.position == "Centre-Back" || it.position == "Full-Back" || it.position == "Defence" }
@@ -91,7 +95,7 @@ class TeamDetailActivity : AppCompatActivity() {
                         }
                     }
 
-                    // Jogadores sem posição
+                    // Exibe jogadores sem posição definida
                     val semPos = elenco.filter { it.position == null }
                     if (semPos.isNotEmpty()) {
                         val titulo = TextView(this@TeamDetailActivity)
@@ -119,4 +123,3 @@ class TeamDetailActivity : AppCompatActivity() {
         })
     }
 }
-
