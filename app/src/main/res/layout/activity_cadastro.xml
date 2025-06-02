@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#003077">
+    android:background="#003077"
+    android:visibility="visible">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,13 +15,13 @@
         tools:layout_editor_absoluteY="1dp">
 
         <FrameLayout
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:id="@+id/frameLayout"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
+            android:layout_width="343dp"
+            android:layout_height="528dp"
             android:background="@drawable/bg_frame_cadastro"
             android:elevation="8dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
