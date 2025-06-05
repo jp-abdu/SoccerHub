@@ -14,7 +14,7 @@
         android:layout_gravity="start"
         android:background="@android:color/transparent"
         android:padding="8dp"
-        android:text="sair"
+        android:text="<"
         android:textColor="@color/cor_branca"
         android:textSize="16sp" />
 
