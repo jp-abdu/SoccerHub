@@ -80,7 +80,6 @@
                         android:layout_marginStart="12dp" />
                 </LinearLayout>
 
-                <!-- Placar -->
                 <TextView
                     android:id="@+id/txtDetalhePlacar"
                     android:layout_width="wrap_content"
@@ -92,7 +91,6 @@
                     android:textSize="32sp"
                     android:textStyle="bold" />
 
-                <!-- Data e rodada -->
                 <TextView
                     android:id="@+id/txtDetalheData"
                     android:layout_width="wrap_content"
@@ -113,7 +111,6 @@
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
-                <!-- Status -->
                 <TextView
                     android:id="@+id/txtStatus"
                     android:layout_width="wrap_content"
@@ -124,7 +121,6 @@
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
-                <!-- Botão de fechar -->
                 <Button
                     android:id="@+id/btnFechar"
                     android:layout_width="match_parent"

@@ -12,26 +12,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:background="@android:color/transparent"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="#FFC107"
         android:padding="8dp"
-        android:text="<"
+        android:text="Sair"
         android:textColor="@color/cor_branca"
         android:textSize="16sp" />
 
-    <!-- Título do campeonato centralizado -->
     <TextView
         android:id="@+id/txtTituloCampeonato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="24dp"
+        android:paddingTop="18dp"
         android:paddingBottom="8dp"
         android:text="Brasileirão Série A"
         android:textColor="@color/cor_branca"
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <!-- Botão do time do coração -->
     <Button
         android:id="@+id/btnMeuTime"
         android:layout_width="wrap_content"
@@ -46,14 +46,12 @@
         android:textColor="@color/cor_branca"
         android:textSize="16sp" />
 
-    <!-- Conteúdo principal -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_weight="1" />
 
-    <!-- Tabs na parte inferior, mas com margem para cima da barra do sistema -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
@@ -65,7 +63,6 @@
         app:tabSelectedTextColor="@color/cor_branca"
         app:tabTextColor="@color/tabela_azul" />
 
-    <!-- Novo container para detalhes -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"

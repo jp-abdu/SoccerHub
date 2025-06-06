@@ -99,7 +99,6 @@
         android:textSize="14sp"
         android:textStyle="bold" />
 
-    <!-- NOVO: Exibe o número da rodada -->
     <TextView
         android:id="@+id/txtRodada"
         android:layout_width="wrap_content"
