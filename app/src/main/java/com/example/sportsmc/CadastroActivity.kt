@@ -34,6 +34,11 @@ class CadastroActivity : AppCompatActivity() {
                 Toast.makeText(this, "Idade deve conter apenas números.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            // Validação: idade deve ser no máximo 120 anos
+            if (idade.toInt() > 120) {
+                Toast.makeText(this, "Idade deve ser no máximo 120 anos.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             // Validação: email deve ser válido
             if (!email.matches(Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"))) {
                 Toast.makeText(this, "Email inválido.", Toast.LENGTH_SHORT).show()
@@ -98,3 +103,4 @@ class CadastroActivity : AppCompatActivity() {
         })
     }
 }
+
